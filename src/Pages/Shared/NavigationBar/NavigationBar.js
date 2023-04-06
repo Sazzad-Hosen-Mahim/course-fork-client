@@ -8,19 +8,19 @@ const NavigationBar = () => {
         <h1 className="text-3xl text-white">Course Fork</h1>
       </div>
       <div className="flex m-5">
-        <Link className="p-3 me-9 bg-yellow-400 hover:bg-yellow-200 rounded-lg font-semibold text-md">
+        <Link className="p-3 me-9 bg-orange-400 hover:bg-yellow-400 rounded-lg font-semibold text-md">
           About
         </Link>
-        <Link className="p-3 me-9 bg-yellow-400 hover:bg-yellow-200 rounded-lg font-semibold text-md">
+        <Link className="p-3 me-9 bg-orange-400 hover:bg-yellow-400 rounded-lg font-semibold text-md">
           Courses
         </Link>
-        <Link className="p-3 me-9 bg-yellow-400 hover:bg-yellow-200 rounded-lg font-semibold text-md">
+        <Link className="p-3 me-9 bg-orange-400 hover:bg-yellow-400 rounded-lg font-semibold text-md">
           FAQ
         </Link>
-        <Link className="p-3 me-9 bg-yellow-400 hover:bg-yellow-200 rounded-lg font-semibold text-md">
+        <Link className="p-3 me-9 bg-orange-400 hover:bg-yellow-400 rounded-lg font-semibold text-md">
           Login
         </Link>
-        <Link className="p-3 me-9 bg-yellow-400 hover:bg-yellow-200 rounded-lg font-semibold text-md">
+        <Link className="p-3 me-9 bg-orange-400 hover:bg-yellow-400 rounded-lg font-semibold text-md">
           SignUp
         </Link>
       </div>

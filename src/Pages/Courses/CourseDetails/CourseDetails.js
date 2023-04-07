@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import { TbDownload } from "react-icons/tb";
 
 const CourseDetails = () => {
   const singleCourseData = useLoaderData();
@@ -18,7 +19,11 @@ const CourseDetails = () => {
             <p className="text-2xl pt-10 text-start">Author: {author.name}</p>
             <p className="py-6 text-lg text-start">{details}</p>
 
-            <button className="btn btn-primary">Checkout</button>
+            <button className="btn btn-primary mx-4">Checkout</button>
+            <button className="btn btn-outline hover:bg-primary">
+              Download
+              <TbDownload className="text-xl ms-2"></TbDownload>
+            </button>
           </div>
         </div>
       </div>

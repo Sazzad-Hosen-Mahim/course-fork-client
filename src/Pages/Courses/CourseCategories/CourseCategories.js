@@ -14,11 +14,11 @@ const CourseCategories = () => {
       <h1>Categories: </h1>
 
       <div className="mt-16 p-5 text-start text-blue-700">
-        <Link className="mb-5" to="/courses">
+        <Link className="mb-5 text-xl" to="/courses">
           All Courses
         </Link>
         {category.map((cat) => (
-          <p className="p-4 mt-3" key={cat.id}>
+          <p className="p-4 mt-3 text-xl" key={cat.id}>
             <Link to={`/category/${cat.id}`}>{cat.name}</Link>
           </p>
         ))}

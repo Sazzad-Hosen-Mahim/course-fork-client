@@ -5,7 +5,7 @@ import { useLoaderData } from "react-router-dom";
 
 const Courses = () => {
   const allCourseData = useLoaderData();
-  console.log(allCourseData);
+  // console.log(allCourseData);
   return (
     <div className="grid grid-cols-12 mt-10 gap-3">
       <div className="col-span-3 text-2xl border-2 ms-3 p-5">

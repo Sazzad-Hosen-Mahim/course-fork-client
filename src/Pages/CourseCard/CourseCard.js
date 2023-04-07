@@ -1,9 +1,10 @@
 import React from "react";
 import "./CourseCard.css";
+import { Link } from "react-router-dom";
 
 const CourseCard = ({ course }) => {
-  console.log(course);
-  const { title, image_url, details } = course;
+  //   console.log(course);
+  const { title, image_url, details, _id } = course;
   //   const courseData = useLoaderData();
   //   console.log(courseData);
   return (
@@ -14,11 +15,13 @@ const CourseCard = ({ course }) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title text-green-500 ">{title}</h2>
-          <p className="text-start">
-            {details.length > 100 ? details.slice(0, 100) + "..." : details}
+          <p className="text-start text-lg">
+            {details.length > 120 ? details.slice(0, 130) + "..." : details}
           </p>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Checkout</button>
+            <Link to={`/courses/${_id}`}>
+              <button className="btn btn-primary">Details</button>
+            </Link>
           </div>
         </div>
       </div>

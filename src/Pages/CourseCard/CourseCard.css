@@ -1,0 +1,9 @@
+.courseCard {
+     height: 550px;
+}
+
+.image {
+     border-radius: 7px;
+     height: 240px;
+     width: 90%;
+}

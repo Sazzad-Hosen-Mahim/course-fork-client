@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../../../assets/image/logo/logo.png";
 
 const NavigationBar = () => {
   return (
     <div className="bg-cyan-600 flex justify-between">
       <Link to="/">
-        <div className="p-5 ms-7">
-          <h1 className="text-3xl text-white">Course Fork</h1>
+        <div className="p-5 ms-7 flex ">
+          <img className="h-14" src={logo} alt="course fork logo" />
+          <h1 className=" text-center align-middle pt-2 text-3xl text-white">
+            Course Fork
+          </h1>
         </div>
       </Link>
       <div className="flex m-5">
@@ -30,7 +34,7 @@ const NavigationBar = () => {
         </Link>
         <Link
           to="/login"
-          className="p-3 me-9 bg-orange-400 hover:bg-yellow-400 rounded-lg font-semibold text-md"
+          className=" p-3 me-9 bg-orange-400 hover:bg-yellow-400 rounded-lg font-semibold text-md"
         >
           Login
         </Link>

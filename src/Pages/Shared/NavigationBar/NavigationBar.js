@@ -4,7 +4,7 @@ import logo from "../../../assets/image/logo/logo.png";
 
 const NavigationBar = () => {
   return (
-    <div className="bg-cyan-600 flex justify-between">
+    <div className="bg-gradient-to-r from-cyan-500 to-blue-500 flex justify-between">
       <Link to="/">
         <div className="p-5 ms-7 flex ">
           <img className="h-14" src={logo} alt="course fork logo" />
@@ -14,35 +14,30 @@ const NavigationBar = () => {
         </div>
       </Link>
       <div className="flex m-5">
-        <Link
-          to="/about"
-          className="p-3 me-9 bg-orange-400 hover:bg-yellow-400 rounded-lg font-semibold text-md"
-        >
-          About
+        <Link to="/about" className="me-5">
+          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-md">
+            About
+          </button>
         </Link>
-        <Link
-          to="/courses"
-          className="p-3 me-9 bg-orange-400 hover:bg-yellow-400 rounded-lg font-semibold text-md"
-        >
-          Courses
+        <Link to="/courses" className="me-5">
+          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-md">
+            Courses
+          </button>
         </Link>
-        <Link
-          to="/faq"
-          className="p-3 me-9 bg-orange-400 hover:bg-yellow-400 rounded-lg font-semibold text-md"
-        >
-          FAQ
+        <Link to="/faq" className="me-5">
+          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-md">
+            FAQ
+          </button>
         </Link>
-        <Link
-          to="/login"
-          className=" p-3 me-9 bg-orange-400 hover:bg-yellow-400 rounded-lg font-semibold text-md"
-        >
-          Login
+        <Link to="/login" className=" me-5">
+          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-md">
+            Login
+          </button>
         </Link>
-        <Link
-          to="/signup"
-          className="p-3 me-9 bg-orange-400 hover:bg-yellow-400 rounded-lg font-semibold text-md"
-        >
-          SignUp
+        <Link to="/signup" className="me-5">
+          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-md">
+            Signup
+          </button>
         </Link>
       </div>
     </div>

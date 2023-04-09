@@ -3,7 +3,7 @@ import ImgHead from "../../assets/image/566.jpg";
 
 const Home = () => {
   return (
-    <div className="grid grid-cols-2">
+    <div className="grid lg:grid-cols-2 md:grid-cols-1">
       <div className="text-start flex items-center mx-10">
         <div className="grid justify-items-center mx-8">
           <p className="text-5xl my-6">

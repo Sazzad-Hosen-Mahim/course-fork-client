@@ -32,11 +32,6 @@ export const routes = createBrowserRouter([
         element: <SIgnUp></SIgnUp>,
       },
       {
-        path: "/pdf",
-        element: <Pdf></Pdf>,
-      },
-
-      {
         path: "/category/:id",
         element: <Category></Category>,
         loader: ({ params }) =>

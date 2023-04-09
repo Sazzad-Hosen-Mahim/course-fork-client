@@ -22,20 +22,22 @@ const CourseDetails = () => {
             <p className="text-2xl pt-10 text-start">Author: {author.name}</p>
             <p className="py-6 text-lg text-start">{details}</p>
 
-            <Link to="/checkout" className="btn btn-primary mx-4">
-              Get Premium Access
-            </Link>
-            <button className="btn btn-outline hover:bg-primary">
-              <TbDownload className="text-xl ms-2"></TbDownload>
-              <PDFDownloadLink
-                document={<Pdf></Pdf>}
-                fileName="Course-Fork-Details"
-              >
-                {({ loading, error }) =>
-                  loading ? "Loading Document..." : "Download"
-                }
-              </PDFDownloadLink>
-            </button>
+            <div className="flex items-center">
+              <Link to="/checkout" className="btn btn-primary mx-4">
+                Get Premium Access
+              </Link>
+              <button className="btn btn-outline hover:bg-primary">
+                <TbDownload className="text-xl me-2"></TbDownload>
+                <PDFDownloadLink
+                  document={<Pdf></Pdf>}
+                  fileName="Course-Fork-Details"
+                >
+                  {({ loading, error }) =>
+                    loading ? "Loading Document..." : "Download"
+                  }
+                </PDFDownloadLink>
+              </button>
+            </div>
           </div>
         </div>
       </div>

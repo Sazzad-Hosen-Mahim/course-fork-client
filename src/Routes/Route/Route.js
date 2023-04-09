@@ -8,6 +8,7 @@ import Checkout from "../../Pages/Checkout/Checkout";
 import Error from "../../Pages/Error404/Error";
 import Login from "../../Pages/Login/Login";
 import SIgnUp from "../../Pages/SignUp/SIgnUp";
+import Pdf from "../../Pages/Courses/CourseDetails/Pdf/Pdf";
 
 export const routes = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ export const routes = createBrowserRouter([
       {
         path: "/signup",
         element: <SIgnUp></SIgnUp>,
+      },
+      {
+        path: "/pdf",
+        element: <Pdf></Pdf>,
       },
 
       {

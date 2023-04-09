@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { TbDownload } from "react-icons/tb";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import Pdf from "./Pdf/Pdf";
 
 const CourseDetails = () => {
   const singleCourseData = useLoaderData();
@@ -24,8 +26,15 @@ const CourseDetails = () => {
               Get Premium Access
             </Link>
             <button className="btn btn-outline hover:bg-primary">
-              Download
               <TbDownload className="text-xl ms-2"></TbDownload>
+              <PDFDownloadLink
+                document={<Pdf></Pdf>}
+                fileName="Course-Fork-Details"
+              >
+                {({ loading, error }) =>
+                  loading ? "Loading Document..." : "Download"
+                }
+              </PDFDownloadLink>
             </button>
           </div>
         </div>

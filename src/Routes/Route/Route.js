@@ -8,7 +8,6 @@ import Checkout from "../../Pages/Checkout/Checkout";
 import Error from "../../Pages/Error404/Error";
 import Login from "../../Pages/Login/Login";
 import SIgnUp from "../../Pages/SignUp/SIgnUp";
-import Pdf from "../../Pages/Courses/CourseDetails/Pdf/Pdf";
 
 export const routes = createBrowserRouter([
   {
@@ -45,6 +44,12 @@ export const routes = createBrowserRouter([
       {
         path: "/courses/:id",
         element: <CourseDetails></CourseDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/course/${params.id}`),
+      },
+      {
+        path: "/checkout/:id",
+        element: <Checkout></Checkout>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/course/${params.id}`),
       },

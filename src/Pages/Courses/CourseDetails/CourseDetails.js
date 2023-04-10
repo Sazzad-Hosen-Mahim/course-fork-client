@@ -6,7 +6,7 @@ import Pdf from "./Pdf/Pdf";
 
 const CourseDetails = () => {
   const singleCourseData = useLoaderData();
-  const { title, details, author, total_view } = singleCourseData;
+  const { title, details, author, total_view, _id } = singleCourseData;
   console.log(singleCourseData);
   return (
     <div>
@@ -23,7 +23,7 @@ const CourseDetails = () => {
             <p className="py-6 text-lg text-start">{details}</p>
 
             <div className="flex items-center">
-              <Link to="/checkout" className="btn btn-primary mx-4">
+              <Link to={`/checkout/${_id}`} className="btn btn-primary mx-4">
                 Get Premium Access
               </Link>
               <button className="btn btn-outline hover:bg-primary">

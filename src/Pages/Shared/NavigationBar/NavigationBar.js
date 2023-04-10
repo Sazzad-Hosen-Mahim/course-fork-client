@@ -14,28 +14,28 @@ const NavigationBar = () => {
         </div>
       </Link>
       <div className="flex m-5">
-        <Link to="/about" className="me-5">
-          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-md">
+        <Link to="/about" className="me-5 ">
+          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-md hover:text-white">
             About
           </button>
         </Link>
         <Link to="/courses" className="me-5">
-          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-md">
+          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-md hover:text-white">
             Courses
           </button>
         </Link>
         <Link to="/faq" className="me-5">
-          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-md">
+          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-md hover:text-white">
             FAQ
           </button>
         </Link>
         <Link to="/login" className=" me-5">
-          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-md">
+          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-md hover:text-white">
             Login
           </button>
         </Link>
         <Link to="/signup" className="me-5">
-          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-md">
+          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-md hover:text-white">
             Signup
           </button>
         </Link>

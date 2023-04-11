@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const SIgnUp = () => {
+  const [error, setError] = useState("");
+  const { createUser } = useContext(AuthContext);
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -8,6 +11,18 @@ const SIgnUp = () => {
     const password = form.password.value;
     const name = form.name.value;
     const imageURL = form.imageURL.value;
+
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        form.reset();
+        setError("");
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(error.message);
+      });
 
     console.log(email, password, name, imageURL);
   };
@@ -55,16 +70,16 @@ const SIgnUp = () => {
               type="text"
               placeholder="Enter Image URL"
               name="imageURL"
-              required
             />
           </label>
           <br />
           <button
-            className="px-7 py-4 bg-orange-400 rounded-lg text-white"
+            className="px-40 py-4 mb-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white hover:bg-gradient-to-l"
             type="submit"
           >
-            Submit
+            Sign Up
           </button>
+          <p className="mt-5 text-red-600">{error}</p>
         </form>
       </div>
     </div>

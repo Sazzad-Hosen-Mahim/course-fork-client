@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
+  const { providerLogin, login } = useContext(AuthContext);
+  //google login
+  const googleProvider = new GoogleAuthProvider();
+  const handleGoogleLogin = () => {
+    providerLogin(googleProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log(email, password);
+    // console.log(email, password);
+    login(email, password).then((result) => {
+      const user = result.user;
+      console.log(user);
+      form.reset();
+    });
   };
 
   return (
@@ -37,10 +57,17 @@ const Login = () => {
           </label>
           <br />
           <button
-            className="px-7 py-4 bg-orange-400 rounded-lg text-white"
+            className="px-40 py-4 mb-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white hover:bg-gradient-to-l"
             type="submit"
           >
             Submit
+          </button>
+          <br />
+          <button
+            onClick={handleGoogleLogin}
+            className="px-28 py-4 bg-gradient-to-r from-sky-600 to-indigo-900 rounded-lg text-white hover:bg-gradient-to-l"
+          >
+            Sign In with Google
           </button>
         </form>
       </div>

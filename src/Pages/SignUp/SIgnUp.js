@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import { toast } from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 const notify = () => {
   toast.success("Email verification sent");
@@ -101,6 +102,12 @@ const SIgnUp = () => {
             />
           </label>
           <br />
+          <p className="mb-4 ">
+            Already have an account?
+            <Link className="text-white mb-5 mx-3" to="/login">
+              Login now!
+            </Link>
+          </p>
           <button
             className="px-40 py-4 mb-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white hover:bg-gradient-to-l"
             type="submit"

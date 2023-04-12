@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import { GoogleAuthProvider } from "firebase/auth";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 
 const Login = () => {
@@ -78,6 +78,13 @@ const Login = () => {
               required
             />
           </label>
+          <br />
+          <p className="mb-2">
+            Don't have an account yet?
+            <Link className="text-white mx-3" to="/signup">
+              Create an account.
+            </Link>
+          </p>
           <br />
           <button
             className="px-40 py-4 mb-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white hover:bg-gradient-to-l"

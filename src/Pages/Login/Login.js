@@ -1,16 +1,25 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import { GoogleAuthProvider } from "firebase/auth";
+import { useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
-  const { providerLogin, login } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const { providerLogin, login, setLoading } = useContext(AuthContext);
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
   //google login
   const googleProvider = new GoogleAuthProvider();
+
   const handleGoogleLogin = () => {
     providerLogin(googleProvider)
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error(error);
@@ -23,11 +32,25 @@ const Login = () => {
     const password = form.password.value;
 
     // console.log(email, password);
-    login(email, password).then((result) => {
-      const user = result.user;
-      console.log(user);
-      form.reset();
-    });
+    login(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        form.reset();
+        setError("");
+        if (user.emailVerified) {
+          navigate(from, { replace: true });
+        } else {
+          toast.error("Your email is not verified yet.");
+        }
+      })
+      .catch((e) => {
+        console.error(e);
+        setError(e.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (

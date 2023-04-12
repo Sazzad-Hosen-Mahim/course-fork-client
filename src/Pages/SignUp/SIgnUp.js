@@ -1,9 +1,15 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import { toast } from "react-hot-toast";
 
+const notify = () => {
+  toast.success("Email verification sent");
+};
 const SIgnUp = () => {
   const [error, setError] = useState("");
-  const { createUser } = useContext(AuthContext);
+  const { createUser, verifyEmail, updateUserProfile } =
+    useContext(AuthContext);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -18,14 +24,36 @@ const SIgnUp = () => {
         console.log(user);
         form.reset();
         setError("");
+        handleUpdateUser(name, imageURL);
+        handleEmailVerification();
+        toast.success("Please Verify your email.");
       })
       .catch((error) => {
         console.error(error);
         setError(error.message);
       });
-
-    console.log(email, password, name, imageURL);
   };
+
+  const handleUpdateUser = (name, imageURL) => {
+    const profile = {
+      displayName: name,
+      photoURL: imageURL,
+    };
+    updateUserProfile(profile)
+      .then(() => {})
+      .catch((e) => console.log(e));
+  };
+
+  // console.log(email, password, name, imageURL);
+
+  const handleEmailVerification = () => {
+    verifyEmail()
+      .then(() => {
+        console.log("Email verification sent");
+      })
+      .catch((e) => console.error(e));
+  };
+
   return (
     <div className="text-center text-xl bg-gradient-to-r from-sky-300 to-indigo-600 mx-64 my-14 rounded-lg ">
       <div className="p-24">
@@ -76,6 +104,7 @@ const SIgnUp = () => {
           <button
             className="px-40 py-4 mb-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white hover:bg-gradient-to-l"
             type="submit"
+            onClick={notify}
           >
             Sign Up
           </button>

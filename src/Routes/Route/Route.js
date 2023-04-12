@@ -35,18 +35,18 @@ export const routes = createBrowserRouter([
         path: "/category/:id",
         element: <Category></Category>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/category/${params.id}`),
+          fetch(`https://course-fork-server.vercel.app/category/${params.id}`),
       },
       {
         path: "/courses",
         element: <Courses></Courses>,
-        loader: () => fetch(`http://localhost:5000/course`),
+        loader: () => fetch(`https://course-fork-server.vercel.app/course`),
       },
       {
         path: "/courses/:id",
         element: <CourseDetails></CourseDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/course/${params.id}`),
+          fetch(`https://course-fork-server.vercel.app/course/${params.id}`),
       },
       {
         path: "/checkout/:id",
@@ -56,7 +56,7 @@ export const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/course/${params.id}`),
+          fetch(`https://course-fork-server.vercel.app/course/${params.id}`),
       },
       {
         path: "*",
